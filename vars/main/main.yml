@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+macos-packages_repos_create: "{{ _macos-packages_repos_create['all']
+  | union ( _macos-packages_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+macos-packages_repos_download: "{{ _macos-packages_repos_download['all']
+  | union ( _macos-packages_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+macos-packages_templates_copy: "{{ _macos-packages_templates_copy['all']
+  | union ( _macos-packages_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+macos-packages_services_enable: "{{ _macos-packages_services_enable['all']
+  | union ( _macos-packages_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+macos-packages_selinux_enable: "{{ _macos-packages_selinux_enable['all']
+  | union ( _macos-packages_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+macos-packages_packages_remove: "{{ _macos-packages_packages_remove['all']
+  | union ( _macos-packages_packages_remove[my_os]
+  | default([]) ) }}"
+macos-packages_packages_repos: "{{ _macos-packages_packages_repos['all']
+  | union ( _macos-packages_packages_repos[my_os]
+  | default([]) ) }}"
+macos-packages_packages_prereq: "{{ _macos-packages_packages_prereq['all']
+  | union ( _macos-packages_packages_prereq[my_os]
+  | default([]) ) }}"
+macos-packages_packages_install: "{{ _macos-packages_packages_install['all']
+  | union ( _macos-packages_packages_install[my_os]
+  | default([]) ) }}"

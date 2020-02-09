@@ -1,0 +1,10 @@
+---
+# Template configuration files for macos-packages
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ macos-packages_templates_copy }}"
+  when: macos-packages_copy_templates
