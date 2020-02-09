@@ -8,10 +8,10 @@ macos-packages: Macos-packages
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.macos-packages](https://galaxy.ansible.com/devops-toolbox.macos-packages)
+[https://galaxy.ansible.com/devopstoolbox.macos-packages](https://galaxy.ansible.com/devopstoolbox.macos-packages)
 
 ```bash
-ansible-galaxy install devops-toolbox.macos-packages
+ansible-galaxy install devopstoolbox.macos-packages
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: macos-packages is configured
       import_role:
-        name: devops-toolbox.macos-packages
+        name: devopstoolbox.macos-packages
       vars:
         macos-packages_packages_state: present
         macos-packages_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
